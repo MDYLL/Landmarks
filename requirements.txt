@@ -1,0 +1,7 @@
+albumentations==1.0.3
+dlib==19.24.0
+matplotlib==3.5.2
+numpy==1.18.1
+torch==1.11.0
+tqdm==4.62.3
+
