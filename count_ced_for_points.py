@@ -110,19 +110,19 @@ def count_ced_auc(errors):
 def main():
     parser = argparse.ArgumentParser(description='CED computation script',
                                      add_help=True)
-    parser.add_argument('--gt_path', action='store', type=str, help='')
-    parser.add_argument('--predictions_path', action='append', type=str, help='')
-    parser.add_argument('--predictions_path1', action='append', type=str, help='')
-    parser.add_argument('--output_path', action='store', type=str, help='')
+    parser.add_argument('--gt_path', action='store', type=str, help='', default="landmarks_task/Menpo/test/")
+    parser.add_argument('--predictions_path', action='append', type=str, help='', default=["landmarks_task/Menpo/dlib"])
+    parser.add_argument('--predictions_path1', action='append', type=str, help='', default=["landmarks_task/Menpo/results"])
+    parser.add_argument('--output_path', action='store', type=str, help='', default="plot_Menpo")
     parser.add_argument('--left_eye_idx', action='store', type=str, help='')
     parser.add_argument('--right_eye_idx', action='store', type=str, help='')
     parser.add_argument('--normalization_type', action='store', type=str, help='',
-                        choices=['bbox', 'eyes'], required=True)
+                        choices=['bbox', 'eyes'], default="bbox")
     parser.add_argument('--max_points_to_read', action='store', type=int, help='',
                         default=None)
     parser.add_argument('--error_thr', action='store', type=float, help='',
                         default=0.08)
-    parser.add_argument('--normalization_path', action='store', type=str, help='')
+    parser.add_argument('--normalization_path', action='store', type=str, help='', default="landmarks_task/Menpo/normalization.pts")
     args = parser.parse_args()
 
     print('args.error_thr = {}'.format(args.error_thr))
